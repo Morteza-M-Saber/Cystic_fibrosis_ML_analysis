@@ -23,7 +23,7 @@ This repo contains the scripts used in the following study:
 
 ## Content
 
-All the scripts are tested on `Ubuntu 20.04 LTS`
+All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system.
 
 * `CF_environment.yml` : Script depedencies, to install all the dependencies, run the following command:
     `conda\mamba env create -f CF_environment.yml`
