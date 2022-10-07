@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repo contains the scripts used in the following study:
+This repo contains the scripts used for the analysis in the following study:
 
 `Single nucleotide variants in Pseudomonas aeruginosa populations from sputum correlate with baseline lung function and predict disease progression in individuals with cystic fibrosis`
 
@@ -30,5 +30,5 @@ All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system.
 
 * `scripts\Clustermap_plotting.py` : Python script to plot clusetermap.
 * `scripts\Data_preprocessing.py` : Python script to pre-process genomic and meta-data.
-* `scripts\Machine_learning_analysis.py` : Python script to run Machine learning models and plot ROCAUCs.
+* `scripts\Machine_learning_analysis.py` : Python script to train Machine learning models, evaluate the results and plot ROCAUCs.
 * `scripts\SNV_filtering.py` : Python script to filter out non-desired variants.
