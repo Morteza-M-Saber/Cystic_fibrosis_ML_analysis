@@ -9,11 +9,10 @@ class PROCESSOR:
     cf : pandas dataframe, shape = df[samples,features]
       Different cystic fibrosis dataset in pickled format
 
-     target : str, shape = [n_classifiers], (default='FEVp_binary')
+     target : str, shape = [n_classifiers], 
       target feature to be predicted
 
-    fit_redundant : array-like, [fit1,fit2,...fitn],optional (default=['FEVp_binary','FEV_ranks_new_category',
-                                'LungDecline','FEVp','Relative_Rate_of_lung_function_decline'])
+    fit_redundant : array-like, [fit1,fit2,...fitn],optional 
       List of features equivalent or correlated with the labels to be predicted
       which needs to be eliminated from the training dataset
     """

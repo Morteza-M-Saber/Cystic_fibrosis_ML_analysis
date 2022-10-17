@@ -8,7 +8,6 @@ import numpy as np
 import pandas as pd
 import scipy
 import scipy.stats
-import seaborn as sns
 import xgboost as xgb
 from feature_selector import FeatureSelector
 from scipy import interp
@@ -284,7 +283,7 @@ def model_generator(
         rec_svc.append(recall_score(y_test, y_pred_svc, average="weighted"))
         bacc_svc.append(balanced_accuracy_score(y_test, y_pred_svc))
         acc_svc.append(accuracy_score(y_test, y_pred_svc))
-    # write out performance values
+    # write out performance values.
     # writing model performances across different metrics in the output
     aucs_lgr_m, f1_lgr_m, rec_lgr_m, pre_lgr_m, bacc_lgr_m, acc_lgr_m = (
         mean_confidence_interval(aucs_lgr),

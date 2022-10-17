@@ -2,7 +2,7 @@
 
 ## Purpose
 
-This repo contains the scripts used for the analysis in the following study:
+This repo contains the scripts written for the analysis in the following study:
 
 `Single nucleotide variants in Pseudomonas aeruginosa populations from sputum correlate with baseline lung function and predict disease progression in individuals with cystic fibrosis`
 

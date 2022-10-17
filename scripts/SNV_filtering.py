@@ -7,7 +7,7 @@ def get_options():
     description = "Filters out the synonymous and upstream snps from the .vcf file"
     parser = argparse.ArgumentParser(description=description)
 
-    parser.add_argument("--infile", help=".vcf file including all dataste ")
+    parser.add_argument("--infile", help=".vcf file including all dataset. ")
     parser.add_argument(
         "--annot",
         help="annotation of markers in marker:annotation dictionary in .json format",
