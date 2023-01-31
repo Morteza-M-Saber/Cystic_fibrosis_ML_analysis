@@ -70,6 +70,6 @@ ML input table:
 
 ### 7. Train and evaluate performance of Machine learning models
 
-To run machine learning models
+To train/evalaute machine learning models
 
    > python3 scripts\Machine_learning_analysis.py
