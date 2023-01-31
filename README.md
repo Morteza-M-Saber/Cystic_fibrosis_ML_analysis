@@ -23,7 +23,7 @@ This repo contains the scripts written for the analysis in the following study:
 
 ## Content
 
-All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system.
+All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system with `gcc compiler 5.4.0.
 
 * `CF_environment.yml` : Script depedencies, to install all the dependencies, run the following command:
     `conda\mamba env create -f CF_environment.yml`
@@ -33,7 +33,14 @@ All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system.
 * `scripts\Machine_learning_analysis.py` : Python script to train Machine learning models, evaluate the results and plot ROCAUCs.
 * `scripts\SNV_filtering.py` : Python script to filter out non-desired variants.
 
+
 ## Raw sequencing data to ML analysis guide
+
+Required dependencies should be installed as listed in the `environment.yml` file by:
+
+`conda create -f CF_environment.yml`
+
+
 
 ### 1. Trimming raw sequencing reads
 
@@ -50,14 +57,14 @@ Functional consequences of each SNV were inferred using snpEFF (v.2.4.2) (Cingol
 
 ### 5. Filtering out synonymous SNVs
 Synonymous SNVs (i.e SNVs with no effect on amino acid composition of protein) were filtered out using the script
->scripts\SNV_filtering.py
+>python3 scripts\SNV_filtering.py
 
 ### 6. Merging genomic and clinical meta-data to generate ML input matrix
 
 Non-synonymous and clinical meta-data were merged to generate ML input matrix.
 
 Script:
->scripts\Data_preprocessing.py
+>python3 scripts\Data_preprocessing.py
 
 ML input table:
 >intermediate_files\CF_NSV_maf0.01_with_metadata.matrix.pickle
@@ -65,7 +72,5 @@ ML input table:
 ### 7. Train and evaluate performance of Machine learning models
 
 To run machine learning models
-1. Install the required dependencies by
-   > conda create -f CF_environment.yml
-2. Train\evaluate ML models by
-   > scripts\Machine_learning_analysis.py
+
+   > python3 scripts\Machine_learning_analysis.py
