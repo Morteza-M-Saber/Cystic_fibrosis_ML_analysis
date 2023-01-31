@@ -25,8 +25,7 @@ This repo contains the scripts written for the analysis in the following study:
 
 All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system with `gcc compiler 5.4.0`.
 
-* `CF_environment.yml` : Script depedencies, to install all the dependencies, run the following command:
-    `conda\mamba env create -f CF_environment.yml`
+* `CF_environment.yml` : Script depedencies, to install all the dependencies
 
 * `scripts\Clustermap_plotting.py` : Python script to plot clusetermap.
 * `scripts\Data_preprocessing.py` : Python script to pre-process genomic and meta-data.
@@ -36,7 +35,7 @@ All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system with `gc
 
 ## Raw sequencing data to ML analysis guide
 
-Required dependencies should be installed as listed in the `environment.yml` file by:
+Required dependencies should be installed as listed in the `CF_environment.yml` file by:
 
 `conda create -f CF_environment.yml`
 
