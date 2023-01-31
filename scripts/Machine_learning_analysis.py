@@ -383,7 +383,6 @@ def model_generator(
     )
     frames = [df_lr, df_xgb, df_rf, df_svc, df_enet]
     result = pd.concat(frames).T
-    result.to_csv(Path(out).with_suffix(".csv"))
 
     df = pd.DataFrame(
         {
@@ -419,7 +418,6 @@ def model_generator(
             "enet_rec": rec_enet,
         }
     )
-    df.to_csv(Path(out).with_suffix(".rocaucs.csv"))
     # estimate rocauc and plot the results
     tpr_auc_model_set = {
         [tprs_lgr, aucs_lgr, "Logistic regression"],
