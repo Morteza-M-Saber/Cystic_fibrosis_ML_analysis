@@ -46,7 +46,7 @@ Required dependencies should be installed as listed in the `CF_environment.yml` 
 Raw sequencing reads were trimmed based on per-base phred quality score cutoff (‘q’ flag) of 18, window size of 1 base pair and minimum remaining sequence length (‘l’ flag) of 19 using fastq-mcf (v.1.04.636) (Aronesty 2013). 
 
 ### 2. Mapping reads to PES genome
-Reads were aligned to the PES genome (CP080405) using BWA MEM (Li, 2013), and the alignments were sorted and indexed using SAMtools (v.1.9) (Li, Handsaker et al. 2009). Samples with average sequencing depth <= 10X across the target genes were discarded, leaving 54 samples for further analysis.
+Reads were aligned to the PES genome (CP080405) using BWA MEM (Li, 2013), and the alignments were sorted and indexed using SAMtools (v.1.9) (Li, Handsaker et al. 2009). Samples with average sequencing depth <= 10X across the target genes were discarded.
 
 ### 3. Calling single nucleotide variants (SNV)
 Single-nucleotide variants (SNVs) with minimum mapping quality of 20, minimum base quality of 18 and minimum coverage of 10x were then identified using VarScan 2 (Koboldt, Zhang et al. 2012)
