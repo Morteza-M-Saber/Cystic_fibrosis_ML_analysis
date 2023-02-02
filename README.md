@@ -27,7 +27,7 @@ All the scripts are tested on `Ubuntu 20.04 LTS` Linux operating system with `gc
 
 * `CF_environment.yml` : Script depedencies, to install all the dependencies
 
-* `scripts\Clustermap_plotting.py` : Python script to plot clusterrmap.
+* `scripts\Clustermap_plotting.py` : Python script to plot clustermap.
 * `scripts\Data_preprocessing.py` : Python script to pre-process genomic and meta-data.
 * `scripts\Machine_learning_analysis.py` : Python script to train Machine learning models, evaluate the results and plot ROCAUCs.
 * `scripts\SNV_filtering.py` : Python script to filter out non-desired variants.
