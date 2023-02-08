@@ -73,11 +73,11 @@ Single-nucleotide variants (SNVs) with minimum mapping quality of 20, minimum ba
 
 Parameters:
 
->--min-coverage		Minimum read depth at a position to make a call
---min-reads2			Minimum supporting reads at a position to call variants
---min-avg-qual		Minimum base quality at a position to count a read 
---min-var-freq		Minimum variant allele frequency threshold
---p-value		Default p-value threshold for calling variants
+>--min-coverage:		Minimum read depth at a position to make a call\
+--min-reads2:			Minimum supporting reads at a position to call variants\
+--min-avg-qual:		Minimum base quality at a position to count a read\
+--min-var-freq:		Minimum variant allele frequency threshold\
+--p-value:		Default p-value threshold for calling variants
 
 ### 4. Functional annotation of SNVs
 Functional consequences of each SNV were inferred using snpEFF (v.2.4.2) (Cingolani, Platts et al. 2012).The SNV allele frequencies (ranging from 0 to 1) at each polymorphic site covered by the AmpliSeq panel were used to generate a SNV frequency matrix, with samples as rows and nucleotide positions as columns.
