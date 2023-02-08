@@ -43,16 +43,50 @@ Required dependencies should be installed as listed in the `CF_environment.yml` 
 
 ### 1. Trimming raw sequencing reads
 
-Raw sequencing reads were trimmed based on per-base phred quality score cutoff (‘q’ flag) of 18, window size of 1 base pair and minimum remaining sequence length (‘l’ flag) of 19 using fastq-mcf (v.1.04.636) (Aronesty 2013). 
+Raw sequencing reads were trimmed based on per-base phred quality score cutoff (‘q’ flag) of 18, window size of 1 base pair and minimum remaining sequence length (‘l’ flag) of 19 using `fastq-mcf` (v.1.04.636) (Aronesty 2013). 
+
+>fastq-mcf -w 1 -q 18 -l 19 {fastq input} -o {fastq output}
+
+Parameters:
+
+>-w:				window-size for quality trimming
+-q:				Quality threshold causing base removal
+-l:				Minimum remaining sequence length
+-o:				Output file
 
 ### 2. Mapping reads to PES genome
 Reads were aligned to the PES genome (CP080405) using BWA MEM (Li, 2013), and the alignments were sorted and indexed using SAMtools (v.1.9) (Li, Handsaker et al. 2009). Samples with average sequencing depth <= 10X across the target genes were discarded.
 
+Index `P749_PES` genome:
+>bwa index P749_PES.fasta
+
+Map the NGS reads to the indexed genome:
+>bwa mem -t 4 P749_PES.fasta in_cleaned.fastq -o out.sam
+
+Parameters:
+> -t:			Number of Threads
+
 ### 3. Calling single nucleotide variants (SNV)
 Single-nucleotide variants (SNVs) with minimum mapping quality of 20, minimum base quality of 18 and minimum coverage of 10x were then identified using VarScan 2 (Koboldt, Zhang et al. 2012)
 
+>java -jar VarScan.jar pileup2snp [pileup file] --min-coverage 10 --min-reads2 2 --min-avg-qual 18 --min-var-freq 0.01 --p-value 99e-02 --output-vcf 1 > [output file]
+
+Parameters:
+
+>--min-coverage		Minimum read depth at a position to make a call
+--min-reads2			Minimum supporting reads at a position to call variants
+--min-avg-qual		Minimum base quality at a position to count a read 
+--min-var-freq		Minimum variant allele frequency threshold
+--p-value		Default p-value threshold for calling variants
+
 ### 4. Functional annotation of SNVs
 Functional consequences of each SNV were inferred using snpEFF (v.2.4.2) (Cingolani, Platts et al. 2012).The SNV allele frequencies (ranging from 0 to 1) at each polymorphic site covered by the AmpliSeq panel were used to generate a SNV frequency matrix, with samples as rows and nucleotide positions as columns.
+
+>snpEff -v P749_PES {input_variant.vcf} > {output_variant.snpEff.vcf}
+
+Parameters:
+
+>-v:			Verbose mode
 
 ### 5. Filtering out synonymous SNVs
 Synonymous SNVs (i.e SNVs with no effect on amino acid composition of protein) were filtered out using the script
