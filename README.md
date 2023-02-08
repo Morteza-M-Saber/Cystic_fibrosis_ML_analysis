@@ -49,9 +49,9 @@ Raw sequencing reads were trimmed based on per-base phred quality score cutoff (
 
 Parameters:
 
->-w:				window-size for quality trimming
--q:				Quality threshold causing base removal
--l:				Minimum remaining sequence length
+>-w:				window-size for quality trimming\
+-q:				Quality threshold causing base removal\
+-l:				Minimum remaining sequence length\
 -o:				Output file
 
 ### 2. Mapping reads to PES genome
